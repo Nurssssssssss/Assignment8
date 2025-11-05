@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мини-окно</title>
+  <style>
+    /* Кнопка */
+    button {
+      padding: 8px 15px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Мини-окно (спрятано изначально) */
+    #miniPopup {
+      display: none; /* скрыто */
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      width: 200px;
+    }
+
+    #miniPopup input {
+      width: 100%;
+      margin-bottom: 8px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="openMini">Открыть мини-окно</button>
+
+  <!-- Мини-форма -->
+  <div id="miniPopup">
+    <h4>Форма</h4>
+    <input type="text" id="name" placeholder="Имя">
+    <input type="password" id="pass" placeholder="Пароль">
+    <button id="closeMini" style="background:#f44336;">Закрыть</button>
+  </div>
+
+  <script>
+    const openMini = document.getElementById("openMini");
+    const closeMini = document.getElementById("closeMini");
+    const miniPopup = document.getElementById("miniPopup");
+
+    // показать мини-окно
+    openMini.addEventListener("click", () => {
+      miniPopup.style.display = "block";
+    });
+
+    // скрыть мини-окно
+    closeMini.addEventListener("click", () => {
+      miniPopup.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>
